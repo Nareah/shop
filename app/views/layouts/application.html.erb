@@ -1,13 +1,31 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-<title>Depot</title>
-<%= stylesheet_link_tag "application", media: "all",
-"data-turbolinks-track" => true %>
-<body class='<%= controller.controller_name %>'>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-<%= csrf_meta_tags %>
-</head>
-<%= yield %>
-</body>
+	<head>
+		<title>Depot</title>
+		<%= stylesheet_link_tag "application", media: "all",
+		"data-turbolinks-track" => true %>
+		<body class='<%= controller.controller_name %>'>
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body id="store" >
+		<div id="banner" >
+			<div style = "width:150px;">
+				<!--<%= image_tag("images.jpg", :style => "width:170px") %> -->
+			</div>	
+			<%= @page_title || "Pragmatic Bookshelf" %>
+		</div>
+		<div id="columns" >
+			<div id="side" >
+				<a href="http://www....", type="button" class="btn btn-success left-link" >Home</a><br />
+				<a href="http://www..../faq", type="button" class="btn btn-success left-link" >Questions</a><br />
+				<a href="http://www..../news", type="button" class="btn btn-success left-link" >News</a><br />
+				<a href="http://www..../contact", type="button" class="btn btn-success left-link" >Contact</a><br />
+			</div>
+			<div id="main" >
+			<%= yield %>
+			</div>
+		</div>
+	</body>
 </html>
