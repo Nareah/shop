@@ -8,6 +8,10 @@ class Product < ActiveRecord::Base
   %r{\.(gif|jpg|png)\Z}i,
   message: 'must be a URL for GIF, JPG or PNG image.'
   }
-  has_and_belongs_to_many :categories
+  has_many :categories_products
+  belongs_to :categories_product 
+  has_many :categories , through: :categories_products 
+  attr_accessor :categories_products_attributes
+  
   
 end

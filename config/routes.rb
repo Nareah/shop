@@ -1,10 +1,10 @@
 Shop::Application.routes.draw do
-<<<<<<< HEAD
+
   get "store/index"
-=======
+
   resources :categories
 
->>>>>>> a34c9572b62f819b555aefcf7746fdb354fe71c8
+
   resources :products
   
   root 'store#index' , :as => 'store'

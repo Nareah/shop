@@ -27,6 +27,7 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
+  <%= f.select :categories_products_attributes, Category.all.collect {|x| [x.title, x.id]}, {}, :multiple => true %>
   <div class="actions">
     <%= f.submit %>
   </div>
